@@ -31,7 +31,7 @@ Toda resposta deve terminar com uma dica simples de economia.
 
 LLM_API_URL = os.getenv("LLM_API_URL")
 LLM_API_KEY = os.getenv("LLM_API_KEY")
-LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")
+LLM_MODEL = os.getenv("LLM_MODEL", "gpt-3.5-turbo")
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
