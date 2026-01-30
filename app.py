@@ -2,7 +2,7 @@ import os
 import json
 import logging
 import requests
-from flask import Flask, request
+from flask import Response
 from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
@@ -101,8 +101,9 @@ def call_llm(text: str) -> str:
 
 @app.post("/whatsapp")
 def whatsapp():
-    body = (request.form.get("Body") or "").strip()
-    resp = MessagingResponse()
+       resp = MessagingResponse()
+       resp.message("ok")
+       return Response(str(resp),mimetype="application/xml")
 
     if not body:
         resp.message(
